@@ -78,6 +78,7 @@ class Controls extends Component {
   }
 
   showControls() {
+    this.props.onShowControls(false);
     this.setState({ hideControls: false }, () => {
       this.progressbar.setValue(2)
       Animated.parallel([
@@ -88,6 +89,7 @@ class Controls extends Component {
   }
 
   hideControls() {
+    this.props.onShowControls(true);
     Animated.parallel([
       Animated.timing(this.animControls, { toValue: 0, duration: 200 }),
       Animated.timing(this.scale, { toValue: 0.25, duration: 200 })
@@ -186,6 +188,7 @@ Controls.propTypes = {
   onSeek: PropTypes.func.isRequired,
   onSeekRelease: PropTypes.func.isRequired,
   onMorePress: PropTypes.func.isRequired,
+  onShowControls: PropTypes.func.isRequired,
   paused: PropTypes.bool.isRequired,
   inlineOnly: PropTypes.bool.isRequired,
   fullscreen: PropTypes.bool.isRequired,

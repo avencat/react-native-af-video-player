@@ -350,6 +350,7 @@ class Video extends Component {
       onTimedMetadata,
       resizeMode,
       onMorePress,
+      onShowControls,
       inlineOnly,
       playInBackground,
       playWhenInactive,
@@ -413,6 +414,7 @@ class Video extends Component {
           loading={loading}
           onSeek={val => this.seek(val)}
           onSeekRelease={pos => this.onSeekRelease(pos)}
+          onShowControls={onShowControls}
           progress={progress}
           currentTime={currentTime}
           duration={duration}
@@ -465,6 +467,7 @@ Video.propTypes = {
   onError: PropTypes.func,
   onProgress: PropTypes.func,
   onMorePress: PropTypes.func,
+  onShowControls: PropTypes.func,
   onFullScreen: PropTypes.func,
   onTimedMetadata: PropTypes.func,
   rate: PropTypes.number,
@@ -494,6 +497,7 @@ Video.defaultProps = {
   onPlay: () => {},
   onError: () => {},
   onProgress: () => {},
+  onShowControls: () => {},
   onMorePress: undefined,
   onFullScreen: () => {},
   onTimedMetadata: () => {},
