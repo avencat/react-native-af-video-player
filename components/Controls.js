@@ -6,13 +6,12 @@ import {
   StyleSheet,
   TouchableWithoutFeedback as Touchable
 } from 'react-native'
-import {
-  PlayButton,
-  ControlBar,
-  Loading,
-  TopBar,
-  ProgressBar
-} from './'
+
+import { TopBar } from './TopBar'
+import { Loading } from './Loading'
+import { ControlBar } from './ControlBar'
+import { PlayButton } from './PlayButton'
+import { ProgressBar } from './ProgressBar'
 
 const styles = StyleSheet.create({
   container: {
@@ -199,8 +198,12 @@ Controls.propTypes = {
   currentTime: PropTypes.number.isRequired,
   duration: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  logo: PropTypes.string.isRequired,
+  logo: PropTypes.string,
   theme: PropTypes.object.isRequired
+}
+
+Controls.defaultProps = {
+  logo: ''
 }
 
 export { Controls }

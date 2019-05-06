@@ -2,7 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StyleSheet } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
-import { ToggleIcon, Time, Scrubber } from './'
+
+import { Time } from './Time'
+import { Scrubber } from './Scrubber'
+import { ToggleIcon } from './ToggleIcon'
 
 const styles = StyleSheet.create({
   container: {
