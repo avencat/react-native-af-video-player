@@ -203,7 +203,7 @@ Controls.propTypes = {
 }
 
 Controls.defaultProps = {
-  logo: ''
+  logo: undefined
 }
 
 export { Controls }

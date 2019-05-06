@@ -82,7 +82,7 @@ TopBar.propTypes = {
 }
 
 TopBar.defaultProps = {
-  logo: ''
+  logo: undefined
 }
 
 export { TopBar }
