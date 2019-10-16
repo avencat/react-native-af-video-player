@@ -11,7 +11,7 @@ import {
   Alert
 } from 'react-native'
 import VideoPlayer from 'react-native-video'
-import KeepAwake from 'react-native-keep-awake'
+import { activateKeepAwake, deactivateKeepAwake } from 'expo-keep-awake'
 import Orientation from 'react-native-orientation-locker'
 import Icons from 'react-native-vector-icons/MaterialIcons'
 import { Controls } from './Controls'
@@ -104,7 +104,7 @@ class Video extends Component {
       Animated.timing(this.animInline, { toValue: inlineHeight, duration: 200 }).start()
       this.props.onPlay(!this.state.paused)
       if (!this.state.paused) {
-        KeepAwake.activate()
+        activateKeepAwake()
         if (this.props.fullScreenOnly) {
           this.setState({ fullScreen: true }, () => {
             this.props.onFullScreen(this.state.fullScreen)
@@ -227,9 +227,9 @@ class Video extends Component {
               if (this.props.rotateToFullScreen) Orientation.lockToLandscape()
             })
           }
-          KeepAwake.activate()
+          activateKeepAwake()
         } else {
-          KeepAwake.deactivate()
+          deactivateKeepAwake()
         }
       })
     })

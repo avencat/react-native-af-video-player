@@ -20,15 +20,23 @@ A customisable React Native video player for Android and IOS
 
 ## Install
 
-```shell
-npm i -S react-native-af-video-player
+You should first follow [expo-keep-awake](https://github.com/expo/expo/tree/master/packages/expo-keep-awake)
+installation instructions
+
+```shell script
+yarn add react-native-video react-native-vector-icons react-native-orientation-locker react-native-linear-gradient react-native-af-video-player
 ```
 
-Then link
+or
+
+```shell script
+npm i -S react-native-video react-native-vector-icons react-native-orientation-locker react-native-linear-gradient react-native-af-video-player
+```
+
+Then link (only for RN < 0.60)
 
 ```shell
 react-native link react-native-video
-react-native link react-native-keep-awake
 react-native link react-native-vector-icons
 react-native link react-native-orientation-locker
 react-native link react-native-linear-gradient
